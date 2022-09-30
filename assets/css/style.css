@@ -47,6 +47,8 @@ p {
   
   /* Animation */
   p {
+    display: flex;
+    flex-wrap: wrap;
     animation: animated-text 4s linear 1s 1 normal both,
                animated-cursor 600ms linear infinite;
   }
