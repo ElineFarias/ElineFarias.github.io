@@ -1,5 +1,16 @@
 @import url('fonts.css');
 
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    font-weight: 400;
+    overflow-x: hidden;
+
+}
+
 /*Navbar*/
 .my-bg-dark {
     background-color: #07080D;
@@ -44,21 +55,26 @@ ul {
 }
 
 p {
-    border-right: solid 5px rgba(255, 255, 255, .75);
-    white-space: nowrap;
+    border-right: solid 2px rgba(255, 255, 255, .75);
     overflow: hidden;
     font-family: 'Source Code Pro', monospace;
-    font-size: 28px;
+    font-size: 26px;
     color: rgba(255, 255, 255, .70);
 }
 
 /* Animation */
 p {
-    display: flex;
-    flex-wrap: wrap;
-    animation: animated-text 4s linear 1s 1 normal both,
-        animated-cursor 600ms linear infinite;
+    display: inline-block;
+    overflow: hidden; /* Esconde o texto até que a animação comece */
+    border-right: .15em solid; /* Cria o cursor */
+    white-space: nowrap; /* Mantém o texto em uma única linha */
+    margin: 0 auto; /* Centraliza o texto */
+    letter-spacing: .15em; /* Espaçamento entre as letras */
+    animation: 
+        animated-text 5s steps(30, end),
+        animated-cursor 600ms step-end infinite;
 }
+
 
 /* text animation */
 
@@ -75,13 +91,9 @@ p {
 /* cursor animations */
 
 @keyframes animated-cursor {
-    from {
-        border-right-color: rgba(255, 255, 255, .75);
-    }
-
-    to {
-        border-right-color: transparent;
-    }
+    0% { border-right-color: transparent; }
+    50% { border-right-color: inherit; }
+    100% { border-right-color: transparent; }
 }
 
 /*Welcome*/
@@ -92,7 +104,7 @@ p {
     height: 350px;
     width: auto;
     margin-top: 20px;
-    border-radius: 200rem;
+    border-radius: 50%;
 }
 
 #about_me .titulo {
@@ -175,7 +187,6 @@ p {
     position: relative;
     padding: 2em 0;
     margin-top: 2em;
-    /* margin-bottom: 2em; */
 }
 
 .section-skills h2 {
@@ -322,7 +333,10 @@ p {
 
 .cd-timeline-content p {
     margin: 1em 0;
+    text-align: center;
     line-height: 1.6;
+    white-space: wrap;
+    animation: animated-text 5s linear 1s 1 normal both, animated-cursor 600ms linear; 
 }
 
 .cd-timeline-content::before {
@@ -400,6 +414,7 @@ p {
         right: 130%;
         text-align: right;
     }
+
 }
 
 /*Experience End*/
