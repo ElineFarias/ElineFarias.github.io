@@ -8,6 +8,8 @@ body{
     background-color: #fff;
     font-weight: 400;
     overflow-x: hidden;
+    padding-top: 0;
+    margin-top: 0;
 
 }
 
@@ -126,7 +128,6 @@ p {
 
 .about-profile .pro-title:after {
     position: absolute;
-    content: ':';
     color: #040404;
     font-size: 14px;
     left: 67px
@@ -377,7 +378,7 @@ p {
 
 @media only screen and (min-width: 1170px) {
     .cd-timeline-content {
-        color: white;
+        color: rgb(14, 13, 13);
         margin-left: 0;
         padding: 1.6em;
         width: 36%;
@@ -388,7 +389,7 @@ p {
         top: 24px;
         left: 100%;
         border-color: transparent;
-        border-left-color: #333C42;
+        border-left-color: #121213;
     }
 
     .cd-timeline-content .cd-date {
@@ -470,6 +471,7 @@ p {
     display: flex;
     flex-direction: column;
     transition: right 0.25s ease-in-out;
+
 }
 
 .ct-socials {
@@ -596,5 +598,374 @@ p {
     padding-bottom: 20px;
     color: #170956;
     border-right: none; /* Remove o cursor animado */
+    word-wrap: break-word; /* Quebra palavras muito longas para a próxima linha */
+    white-space: normal; /* Permite que o texto quebre para a próxima linha */
   }
+
+  .menu-hamburger{
+    background-color: #10777a;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.menu-hamburguer-elements{
+    position: relative;
+    display: flex;
+    width: 80%;
+    height: 5vh;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 9999;
+}
+
+.menu-hamburguer-elements li{
+
+    color: white;
+    list-style: none;
+    font-size: 1.4rem;
+    margin: 2rem 0;
+    font-size: 1.4rem;
+    list-style: none;
+}
+
+.menu-hamburguer-elements a{
+    color: white;
+    text-decoration: none;
+}
+
+.menu-hamburguer-elements a:hover{
+    color: rgba(30, 124, 30, 0.8)
+}
+
+
+/* BOTÃO MENU HAMBURGUER */
+.menu {
+    background: #10777a;
+    width: 20px;
+    height: 60px;
+    margin: 1rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-hamburger {
+    background: #000;
+}
+
+.menu-hamburger label {
+    background: transparent;
+}
   
+.hamburguer {
+    position: relative;
+    display: block;
+    background: transparent;
+    width: 50px;
+    height: 3px;
+    top: 29px;
+    left: 8px;
+    transition: 0.5s ease-in-out;
+    background-color: #0056b3;
+}
+
+.menu-hamburguer-elements a {
+    color: white;
+
+}
+
+.menu-hamburguer-elements a:hover {
+    color: #008080;
+}
+  
+.hamburguer:before,
+.hamburguer:after {
+    background: #0c0c0c;
+    content: '';
+    display: block;
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    transition: 0.5s ease-in-out;
+}
+  
+.hamburguer:before {
+    top: -10px;
+}
+  
+.hamburguer:after {
+    bottom: -10px;
+}
+  
+input {
+    display: none;
+}
+
+/* rotação dos elementos do span */
+input:checked ~ label .hamburguer {
+    transform: rotate(45deg);
+}
+
+input:checked ~ label .hamburguer:before {
+    transform: rotate(90deg);
+    top: 0;
+}
+  
+input:checked ~ label .hamburguer:after {
+    transform: rotate(90deg);
+    bottom: 0;
+}
+
+input:checked ~ .menu-hamburguer-elements{
+    left: 0;
+}
+  
+
+/**************************** Responsividade *********************************/
+
+@media only screen and (max-width: 768px) {
+    * {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .masthead {
+        display: none;
+    }
+
+    p {
+        animation: none !important;
+        border-right: none; /* Remove o cursor animado */
+    }
+
+    .cd-timeline-content p {
+        margin: 1em 0;
+        text-align: center;
+        line-height: 1.6;
+        white-space: wrap;
+        animation: animated-text 5s linear 1s 1 normal both, animated-cursor 600ms linear; 
+    }
+
+    #about_me div{
+        position: relative; 
+        margin-top: 20px;
+    }
+
+    .divShadow img {
+        height: 200px; /* Reduz o tamanho da imagem */
+        margin-top: 70px; /* Reduz a margem superior */
+    }
+    
+    header{
+        height: 20%;
+    }
+
+    .menu-hamburger{
+        display: flex;
+        width: auto;
+        flex-direction: column;
+        align-self: flex-start;
+        overflow: auto;
+        z-index: 1;
+        color: white
+    }
+
+    .menu-hamburguer-elements{
+        width: 40%;
+        height: 100%;
+        background-color: rgba(92, 168, 143, 0.9);
+        position: fixed;
+        left: -60%;
+        top: 0;
+        transition: left cubic-bezier(1,0,0,1) .8s;       
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 15vh;   
+        z-index: -1;
+    }
+
+    .menu{
+        display: flex;
+        height: 60px;
+        width: 60px;
+    }
+
+    .ct-socials {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        flex-direction: row;
+    }
+
+    .ct-socials li a img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .btn-common {
+        z-index: 9998;
+        position: relative;
+        z-index: -1;
+        margin-bottom: 5px;
+    }
+    #about_me .titulo {
+        text-align: center;
+    }
+
+    #about_me li {
+        text-align: center;
+         letter-spacing: 2px;
+         font-weight: bold; 
+         color:#000;
+    }
+    #about_me li span{
+        font-size: 12px;
+        color:#170956;
+        text-justify: auto;
+    }
+
+    .about-profile .pro-title {
+        width: 15%;  /* Use a largura original para telas maiores */
+        margin:0px;
+        padding: 0px;
+        text-justify: auto;
+    }
+
+    .menu-hamburger {
+        background: transparent
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1170px) {
+    * {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .masthead {
+        display: none;
+    }
+
+    p {
+        animation: none !important;
+        border-right: none; /* Remove o cursor animado */
+    }
+
+    .cd-timeline-content p {
+        margin: 1em 0;
+        text-align: center;
+        line-height: 1.6;
+        white-space: wrap;
+        animation: animated-text 5s linear 1s 1 normal both, animated-cursor 600ms linear; 
+    }
+
+    #about_me div{
+        position: relative; 
+        margin-top: 20px;
+    }
+
+    .divShadow img {
+        height: 200px; /* Reduz o tamanho da imagem */
+        margin-top: 70px; /* Reduz a margem superior */
+    }
+    
+    header{
+        height: 20%;
+    }
+
+    .menu-hamburger{
+        display: flex;
+        width: auto;
+        flex-direction: column;
+        align-self: flex-start;
+        overflow: auto;
+        z-index: 1;
+        color: white
+    }
+
+    .menu-hamburguer-elements{
+        width: 40%;
+        height: 100%;
+        background-color: rgba(92, 168, 143, 0.9);
+        position: fixed;
+        left: -60%;
+        top: 0;
+        transition: left cubic-bezier(1,0,0,1) .8s;       
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 15vh;   
+        z-index: -1;
+    }
+
+    .menu{
+        display: flex;
+        height: 60px;
+        width: 60px;
+    }
+
+    .ct-socials {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        flex-direction: row;
+    }
+
+    .ct-socials li a img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .btn-common {
+        z-index: 9998;
+        position: relative;
+        z-index: -1;
+        margin-bottom: 5px;
+    }
+    #about_me .titulo {
+        text-align: center;
+    }
+
+    #about_me li {
+        text-align: center;
+         letter-spacing: 2px;
+         font-weight: bold; 
+         color:#000;
+    }
+    #about_me li span{
+        font-size: 12px;
+        color:#170956;
+        text-justify: auto;
+    }
+
+    .about-profile .pro-title {
+        width: 15%;  /* Use a largura original para telas maiores */
+        margin:0px;
+        padding: 0px;
+        text-justify: auto;
+    }
+
+    .menu-hamburger {
+        background: transparent
+    }
+}
