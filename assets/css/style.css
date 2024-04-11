@@ -461,39 +461,30 @@ p {
 /* Social buttons */
 .ct-socials {
     position: fixed;
-    top: 25%;
+    top: 18%;
     right: 0;
-    list-style: none;
-    padding-left: 0;
     z-index: 10;
     margin: 0;
-    -webkit-transition: right 0.25s ease-in-out;
-    transition: right 0.25s ease-in-out;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    padding-left: 0;
+    list-style: none;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
+    transition: right 0.25s ease-in-out;
+}
+
+.ct-socials {
+    background: transparent;
 }
 
 .ct-socials li a img {
-    background:#fff;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    width: 3.2rem;
+    width: 2.5rem;
     height: 2.5rem;
-    -webkit-transition: all 0.15s ease-in-out;
     transition: all 0.15s ease-in-out;
-    float: right;
+    border-radius: 50%;
+    margin: 0.5rem;
 }
 
 /* console efect */
@@ -515,3 +506,95 @@ p {
 .my-bg-footer {
     background-color: #fff;
 }
+
+.project-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    border-radius: 5px; /* Bordas arredondadas */
+    overflow: hidden; /* Garante que tudo dentro do cartão respeite as bordas arredondadas */
+    margin: 20px;
+    height: auto;
+    padding-bottom: 10px;
+  }
+  
+  .project-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-card-img-top {
+    width: 100%;
+    height: 17rem; 
+  }
+  
+  .project-card-body {
+    padding: 2px 16px;
+  }
+  
+  .project-card-title {
+    font-size: 24px;
+    margin: 15px;
+    text-align: center;
+    color: #8219ac;
+  }
+  
+  .project-card-text {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #000;
+    display: block; 
+    display: block; /* Volta ao comportamento de bloco normal */
+    overflow: visible; /* Mostra o conteúdo que pode ter sido escondido */
+    white-space: normal; /* Permite que o texto quebre normalmente */
+    border-right: none; /* Remove o cursor animado */
+    animation: none; /* Remove a animação */
+    letter-spacing: normal; /* Retorna ao espaçamento normal */
+    text-justify: auto; /* Justificação automática */
+    
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 7px 14px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+    margin: auto;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+    width: 100px; 
+}
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+  #projects h2{
+    padding-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+  }
+
+  #projects h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #008080;
+    text-align: center;
+    font-size: 2.2rem;
+    text-decoration: underline;
+    padding-bottom: 30px;
+    padding-top: 40px;
+  }
+
+  #projects p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    text-align: center;
+    padding-bottom: 20px;
+    color: #170956;
+    border-right: none; /* Remove o cursor animado */
+  }
+  
