@@ -56,62 +56,53 @@ ul {
     padding-top: 150px;
 }
 
-p {
-    border-right: solid 2px rgba(255, 255, 255, .75);
-    overflow: hidden;
-    font-family: 'Source Code Pro', monospace;
-    font-size: 26px;
-    color: rgba(255, 255, 255, .70);
-}
-
 /* Animation */
 p {
     display: inline-block;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 26px;
     overflow: hidden; /* Esconde o texto até que a animação comece */
-    border-right: .15em solid; /* Cria o cursor */
-    white-space: nowrap; /* Mantém o texto em uma única linha */
     margin: 0 auto; /* Centraliza o texto */
     letter-spacing: .15em; /* Espaçamento entre as letras */
     animation: 
-        animated-text 5s steps(30, end),
-        animated-cursor 600ms step-end infinite;
+        fade-in-text 5s ease-in-out;
 }
-
 
 /* text animation */
 
-@keyframes animated-text {
+@keyframes fade-in-text {
     from {
-        width: 0;
+        opacity: 0;
     }
 
     to {
-        width: 100%;
+        opacity: 1;
     }
-}
-
-/* cursor animations */
-
-@keyframes animated-cursor {
-    0% { border-right-color: transparent; }
-    50% { border-right-color: inherit; }
-    100% { border-right-color: transparent; }
 }
 
 /*Welcome*/
 
 
 /*About-me*/
+
+#about_me {
+    display: flex;
+    height: 100vh;
+    justify-content: space-evenly;
+    align-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
 .divShadow img {
     height: 350px;
     width: auto;
-    margin-top: 20px;
+    margin-top: 10rem;
     border-radius: 50%;
 }
 
 #about_me .titulo {
-    margin-left: 3rem;
-    margin-right: auto;
+    margin: 3rem;
     font-family: 'Times New Roman', Times, serif;
     font-style: oblique;
     font-weight: bold;
@@ -191,17 +182,13 @@ p {
 }
 
 .skills {
-    padding: 2rem;
-    margin: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around
 }
 .section-skills h3 {
-    color: #008080;
+    color: #4B0082;
     font-size: 1.5rem;
     font-weight: 700;
-    margin: 1rem auto 0;
     text-align: center;
 }
 
@@ -218,6 +205,7 @@ p {
     width: 7rem;
     height: 7rem;
     border-radius: 1rem;
+    margin: 2rem;
 }
 
 .skills img:hover {
@@ -313,6 +301,7 @@ p {
     background: #333C42;
     border-radius: 2px;
     padding: 1em;
+    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
 
 }
 
@@ -583,7 +572,7 @@ p {
   #projects h3{
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
-    color: #008080;
+    color: #4B0082;
     text-align: center;
     font-size: 2.2rem;
     text-decoration: underline;
@@ -604,7 +593,7 @@ p {
 
   .menu-hamburger{
     background-color: #10777a;
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: center;
     position: fixed;
@@ -639,7 +628,7 @@ p {
 }
 
 .menu-hamburguer-elements a:hover{
-    color: rgba(30, 124, 30, 0.8)
+    color: #4B0082;
 }
 
 
@@ -662,17 +651,6 @@ p {
     background: transparent;
 }
   
-.hamburguer {
-    position: relative;
-    display: block;
-    background: transparent;
-    width: 50px;
-    height: 3px;
-    top: 29px;
-    left: 8px;
-    transition: 0.5s ease-in-out;
-    background-color: #0056b3;
-}
 
 .menu-hamburguer-elements a {
     color: white;
@@ -680,7 +658,7 @@ p {
 }
 
 .menu-hamburguer-elements a:hover {
-    color: #008080;
+    color: #4B0082;
 }
   
 .hamburguer:before,
@@ -757,10 +735,6 @@ input:checked ~ .menu-hamburguer-elements{
         animation: animated-text 5s linear 1s 1 normal both, animated-cursor 600ms linear; 
     }
 
-    #about_me div{
-        position: relative; 
-        margin-top: 20px;
-    }
 
     .divShadow img {
         height: 200px; /* Reduz o tamanho da imagem */
